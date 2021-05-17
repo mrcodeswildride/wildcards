@@ -19,35 +19,18 @@ letters.focus()
 function startFindWords() {
   let lettersValue = letters.value.trim().toLowerCase()
 
-  if (lettersValue != `` && !finding) {
+  if (!finding) {
     showAllCheckbox.checked = false
     let numWildcards = getNumWildcards(lettersValue)
 
     if (numWildcards > 5) {
       box.innerHTML = `Input cannot have more than 5 wildcards.`
       showHideCheckbox(numWildcards)
-    }
-    else {
+    } else {
       box.innerHTML = `Finding all combinations...`
       finding = true
 
       setTimeout(findWords, 10, lettersValue, numWildcards)
-    }
-  }
-
-  letters.focus()
-}
-
-function toggleShowAll() {
-  if (!finding) {
-    if (showAllCheckbox.checked) {
-      box.innerHTML = `Showing all combinations...`
-      finding = true
-
-      setTimeout(showWords, 10)
-    }
-    else {
-      showWords()
     }
   }
 }
@@ -81,18 +64,8 @@ function getCombos(character) {
     }
 
     return alphabet
-  }
-  else {
+  } else {
     return character
-  }
-}
-
-function showHideCheckbox(numWildcards) {
-  if (numWildcards <= 3) {
-    showAllDiv.style.display = `inline-block`
-  }
-  else {
-    showAllDiv.style.display = `none`
   }
 }
 
@@ -142,6 +115,27 @@ function getNumWildcards(lettersValue) {
   }
 
   return numWildcards
+}
+
+function showHideCheckbox(numWildcards) {
+  if (numWildcards <= 3) {
+    showAllDiv.style.display = `inline-block`
+  } else {
+    showAllDiv.style.display = `none`
+  }
+}
+
+function toggleShowAll() {
+  if (!finding) {
+    if (showAllCheckbox.checked) {
+      box.innerHTML = `Showing all combinations...`
+      finding = true
+
+      setTimeout(showWords, 10)
+    } else {
+      showWords()
+    }
+  }
 }
 
 function fetchDictionary() {

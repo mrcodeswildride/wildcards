@@ -1,31 +1,25 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Wildcards</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
+  </head>
 
-<head>
-	<title>Wildcards</title>
-	<meta name="viewport" content="width=device-width, initial-scale=0.5">
-	<link href="style.css" rel="stylesheet">
-	<script src="script.js" defer>
+  <body>
+    <h1>Wildcards</h1>
 
-	</script>
-</head>
+    <p>Use ? for wildcards. For example, ?at will result in bat, cat, eat, etc.</p>
 
-<body>
-	<h1>Wildcards</h1>
+    <input type="text" placeholder="letters" autocomplete="off" id="letters" />
+    <button id="wordsButton">Find words</button>
 
-	<p>
-    Use ? for wildcards. For example, ?at will result in bat, cat, eat, etc.
-  </p>
+    <div id="showAllDiv">
+      <input type="checkbox" id="showAllCheckbox" />
+      <label for="showAllCheckbox">Show all combinations</label>
+    </div>
 
-	<input type="text" placeholder="letters" autocomplete="off" id="letters">
-  <button id="wordsButton">Find words</button>
-
-  <div id="showAllDiv">
-    <input type="checkbox" id="showAllCheckbox">
-    <label for="showAllCheckbox">Show all combinations</label>
-  </div>
-
-  <div id="box"></div>
-</body>
-
+    <div id="box"></div>
+  </body>
 </html>
